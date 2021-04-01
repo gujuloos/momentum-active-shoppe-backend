@@ -8,6 +8,8 @@ public class ProductDTO {
 
     private long cost;
 
+    private boolean selected;
+
     public String getName() {
         return name;
     }
@@ -30,5 +32,13 @@ public class ProductDTO {
 
     public void setCost(long cost) {
         this.cost = cost;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }

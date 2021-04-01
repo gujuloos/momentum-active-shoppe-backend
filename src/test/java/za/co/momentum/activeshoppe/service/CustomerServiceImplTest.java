@@ -8,7 +8,6 @@ import org.mockito.Mock;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.server.ResponseStatusException;
 import za.co.momentum.activeshoppe.domain.Customer;
-import za.co.momentum.activeshoppe.domain.Product;
 import za.co.momentum.activeshoppe.model.CustomerDTO;
 import za.co.momentum.activeshoppe.repository.CustomerRepository;
 import za.co.momentum.activeshoppe.service.impl.CustomerServiceImpl;
@@ -62,7 +61,7 @@ public class CustomerServiceImplTest {
         Assert.assertEquals(100, customer.getActiveDaysPoints());
 
         customer = this.customerService.saveCustomer(customer);
-        Assert.assertEquals(50, customer.getActiveDaysPoints());
+        Assert.assertEquals(100, customer.getActiveDaysPoints());
     }
 
     private Customer getCustomer(int points) {

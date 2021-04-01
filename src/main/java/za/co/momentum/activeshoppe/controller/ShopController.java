@@ -26,17 +26,17 @@ public class ShopController {
         this.productService = productService;
     }
 
-    @GetMapping("/products")
+    @GetMapping(value = "/products", produces = "application/json")
     public List<ProductDTO> getAllProducts() {
         return this.productService.findAll();
     }
 
-    @GetMapping("/customers")
+    @GetMapping(value = "/customers", produces = "application/json")
     public List<CustomerDTO> getAllCustomers() {
         return this.customerService.findAll();
     }
 
-    @PostMapping("/purchase")
+    @PostMapping(value = "/purchase", produces = "application/json")
     public ResponseEntity<?> purchaseProducts(@RequestBody final PurchaseRequestDTO purchaseRequestDto) {
         this.productService.purchaseProducts(purchaseRequestDto.getCustomerId(), purchaseRequestDto.getProductCodes());
         return ResponseEntity.status(HttpStatus.OK).build();
