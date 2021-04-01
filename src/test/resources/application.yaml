@@ -1,0 +1,16 @@
+server:
+  servlet:
+    context-path: /momentum-active-shoppe
+  error:
+    include-message: always
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    generate-unique-name: false
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
